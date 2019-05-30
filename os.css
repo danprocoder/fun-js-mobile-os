@@ -1,0 +1,130 @@
+#os-root {
+    font-family: 'Lucida Grande';
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#os-root #top {
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #333333c9;
+    padding: 0 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999999999999999999;
+}
+
+#os-root #top .right {
+    float: right;
+}
+
+#os-root .app-container {
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Bootscreen */
+.bootview {
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* Homescreen */
+.homescreen {
+    position: relative;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.homescreen .wallpaper,
+.homescreen .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.homescreen .wallpaper {
+    width: 100%;
+}
+
+.homescreen .inner {
+    color: #ffffff;
+    padding-top: 40px;
+    text-shadow: 1px 1px 2px #333333c9;
+}
+
+.homescreen .inner .time {
+    text-align: center;
+    font-size: 40px;
+}
+
+.homescreen .inner .date {
+    text-align: center;
+}
+
+/* Menuview */
+.menuview .wallpaper,
+.menuview .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.menuview .wallpaper {
+    width: 100%;
+}
+
+.menuview {
+    text-shadow: 1px 1px 2px #222222c9;
+    position: relative;
+}
+
+.menuview .inner .scrollable {
+    padding: 10px;
+}
+
+.menuview,
+.menuview .menu-icon {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menuview .menu-icon {
+    float: left;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.menuview .menu-icon .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: -1px 0 5px #b7b7b7bd;
+    overflow: hidden;
+}
+
+.menuview .menu-icon .icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.menuview .menu-icon .name {
+    font-size: 10px;
+    margin-top: 3px;
+}

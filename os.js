@@ -9,7 +9,7 @@ String.prototype.toDOM=function(){
 
 class OS {
     apps = [
-        new Facebook(),
+        new Nairaland(),
         new Twitter(),
         new Google()
     ];
@@ -193,17 +193,19 @@ class App {
     }
 }
 
-class Facebook extends App {
+class Nairaland extends App {
     constructor() {
         super();
 
         this.icon = 'https://cdn1.iconfinder.com/data/icons/social-media-2112/29/Asset_2-512.png';
-        this.name = 'Facebook';
+        this.name = 'Nairaland';
     }
 
     render() {
         return (`
-            <div class="app-container">Welcome to facebook app</div>
+            <div class="app-container nairaland">
+                <iframe src="https://nairaland.com"></iframe>
+            </div>
         `);
     }
 }

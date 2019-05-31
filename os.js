@@ -17,6 +17,8 @@ class OS {
         wallpaper: 'https://wallpaperaccess.com/full/449278.jpg',
     };
 
+    isBooting = true;
+
     constructor(id) {
         this.phone = document.getElementById(id);
         this.phoneScreen = this.phone.querySelector('.screen');
@@ -45,6 +47,8 @@ class OS {
         this.outputToScreen();
 
         setTimeout(() => {
+            this.isBooting = false;
+            
             this.currentView = 'home_view';
             this.outputToScreen();
         }, 1000);
@@ -76,12 +80,16 @@ class OS {
     initButtonListeners() {
         if (this.menuButton) {
             this.menuButton.addEventListener('click', () => {
+                if (this.isBooting) return;
+
                 this.switchToView('menu_view');
             });
         }
 
         if (this.toggleHomeMenuButton) {
             this.toggleHomeMenuButton.addEventListener('click', () => {
+                if (this.isBooting) return;
+
                 if (this.currentView === 'home_view') {
                     this.switchToView('menu_view');
                 } else if (this.currentView === 'menu_view') {
@@ -94,6 +102,8 @@ class OS {
 
         if (this.homeKey) {
             this.homeKey.addEventListener('click', () => {
+                if (this.isBooting) return;
+
                 this.switchToView('home_view');
             });
         }
@@ -107,10 +117,12 @@ class OS {
 
         this.phoneScreen.innerHTML = (`
             <div id="os-root">
-                <div id="top">
-                    <span>${date.getHours()}:${date.getMinutes()}</span>
-                    <span class="right">100%</span>
-                </div>
+                ${!this.isBooting ? (`
+                    <div id="top">
+                        <span>${date.getHours()}:${date.getMinutes()}</span>
+                        <span class="right">100%</span>
+                    </div>
+                `) : ('')}
                 <div id="viewport"></div>
             </div>
         `);
@@ -262,7 +274,8 @@ class Gallery extends App {
             images: [
                 'https://wallpaperaccess.com/full/449278.jpg',
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGsE3X3uUe5-PMK-AVhLiky7-9cQJg-3GUhOrkpqULj8E4FduC',
-
+                'https://res.cloudinary.com/carsguide/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2017-Lamborghini-Aventador-S-coupe-blue-1200x800-%284%29.jpg',
+                'https://www.geek.com/wp-content/uploads/2019/04/exoplanet-1-625x352.jpg'
             ],
             viewing: null,
             modalOpen: false,

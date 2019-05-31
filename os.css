@@ -39,7 +39,11 @@
 /* Bootscreen */
 .bootview {
     color: #ffffff;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
 }
 
 /* Homescreen */
@@ -67,6 +71,7 @@
     color: #ffffff;
     padding-top: 40px;
     text-shadow: 1px 1px 2px #333333c9;
+    margin-top: 20px;
 }
 
 .homescreen .inner .time {
@@ -95,6 +100,12 @@
 .menuview {
     text-shadow: 1px 1px 2px #222222c9;
     position: relative;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.menuview .inner {
+    margin-top: 20px;
 }
 
 .menuview .inner .scrollable {

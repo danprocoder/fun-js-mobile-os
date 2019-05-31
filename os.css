@@ -33,6 +33,10 @@
     float: right;
 }
 
+#os-root #viewport {
+    height: 100%;
+}
+
 #os-root .app-container {
     color: #ffffff;
     position: absolute;
